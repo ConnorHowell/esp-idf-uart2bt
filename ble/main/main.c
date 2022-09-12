@@ -31,13 +31,8 @@
 #define SPP_PROFILE_NUM				1
 #define SPP_PROFILE_APP_IDX			0
 #define ESP_SPP_APP_ID				0x56
-#ifdef CONFIG_IDF_TARGET_ESP32
-#define SAMPLE_DEVICE_NAME			"ESP32_SPP_SERVER" //The Device Name Characteristics in GAP
-#elif defined CONFIG_IDF_TARGET_ESP32S3
-#define SAMPLE_DEVICE_NAME			"ESP32S3_SPP_SERVER" //The Device Name Characteristics in GAP
-#elif defined CONFIG_IDF_TARGET_ESP32C3
-#define SAMPLE_DEVICE_NAME			"ESP32C3_SPP_SERVER" //The Device Name Characteristics in GAP
-#endif
+#define SAMPLE_DEVICE_NAME			"DIYDragy" //The Device Name Characteristics in GAP
+
 #define SPP_SVC_INST_ID				0
 
 #define SPP_DATA_MAX_LEN           (512)
@@ -74,8 +69,8 @@ enum{
 /// SPP Service
 static const uint16_t spp_service_uuid = 0xABF0;
 /// Characteristic UUID
-#define ESP_GATT_UUID_SPP_DATA_RECEIVE		0xABF1
-#define ESP_GATT_UUID_SPP_DATA_NOTIFY		0xABF2
+#define ESP_GATT_UUID_SPP_DATA_RECEIVE		0x0003
+#define ESP_GATT_UUID_SPP_DATA_NOTIFY		0x0002
 //#define ESP_GATT_UUID_SPP_COMMAND_RECEIVE   0xABF3
 //#define ESP_GATT_UUID_SPP_COMMAND_NOTIFY	  0xABF4
 //#define ESP_GATT_UUID_SPP_HEARTBEAT		  0xABF5
@@ -119,7 +114,7 @@ static uint8_t test_manufacturer[3]={'E', 'S', 'P'};
 static uint8_t sec_service_uuid[16] = {
 	/* LSB <--------------------------------------------------------------------------------> MSB */
 	//first uuid, 16bit, [12],[13] is the value
-	0xfb, 0x34, 0x9b, 0x5f, 0x80, 0x00, 0x00, 0x80, 0x00, 0x10, 0x00, 0x00, 0x18, 0x0D, 0x00, 0x00,
+    0x9E, 0xCA, 0xDC, 0x24, 0x0E, 0xE5, 0xA9, 0xE0, 0x93, 0xF3, 0xA3, 0xB5, 0x00, 0x00, 0x40, 0x6E,
 };
 
 // config adv data
